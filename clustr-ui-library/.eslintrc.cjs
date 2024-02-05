@@ -14,7 +14,6 @@ module.exports = {
   rules: {
     "react-refresh/only-export-components": [
         "warn",
-      { allowConstantExports: true },
     ],
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/ban-types": "off",
