@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from './Button.tsx'
+import { Button } from './Button'
 
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
@@ -22,7 +22,7 @@ export const Default: Story = {
         targetBlank: true,
         type: 'button',
         size: 'small',
-        to: 'www.facebook.com',
+        // to: 'www.facebook.com',
     },
 }
 
@@ -37,5 +37,12 @@ export const Ghost: Story = {
     args: {
         children: 'Click me',
         variant: 'ghost',
+    },
+}
+
+export const Large: Story = {
+    args: {
+        children: 'Click me',
+        size: 'large',
     },
 }

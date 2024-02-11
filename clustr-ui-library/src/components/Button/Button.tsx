@@ -1,5 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
+import { Link } from '../Link'
+
 import './button.css'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLElement> {
@@ -12,12 +14,12 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLElement> {
     targetBlank?: boolean
     className?: string
     icon?: React.ReactNode | null
-    onclick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export const Button: React.FC<
     ButtonProps & React.ButtonHTMLAttributes<HTMLElement>
 > = ({
+    children,
     type = 'button',
     disabled,
     size,
@@ -29,18 +31,33 @@ export const Button: React.FC<
     onClick,
     ...ButtonProps
 }) => {
+    const ButtonComponent = to ? Link : 'button'
+    const linkDependentProps = to
+        ? {
+              target: targetBlank ? '_blank' : undefined,
+              to: !disabled ? to : undefined,
+          }
+        : { type: type }
+
     return (
-        <button
-            {...ButtonProps}
+        <ButtonComponent
             className={clsx(
                 'button--default',
                 size && `button--${size}`,
-                variant && `button--${variant}`
+                variant && `button--${variant}`,
+                !!icon && `button--has--icon`,
+                !children && 'button--no-content'
             )}
             onClick={!disabled ? onClick : undefined}
-            target={targetBlank ? '_blank' : undefined}
             disabled={disabled}
             type={type}
-        ></button>
+            {...linkDependentProps}
+            {...ButtonProps}
+        >
+            {icon ? <span className="button__icon">{icon}</span> : null}
+            {children ? (
+                <span className="LemonButton__content">{children}</span>
+            ) : null}
+        </ButtonComponent>
     )
 }

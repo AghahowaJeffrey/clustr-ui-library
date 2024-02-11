@@ -2,6 +2,7 @@
 /* -- modifier */
 /* __ element */
 
+/* Variants */
 .button--default {
     position: relative;
     display: flex;
@@ -15,7 +16,6 @@
     font-weight: 500;
     line-height: 1.5rem;
     text-align: center;
-    user-select: none;
     color: #ffffff;
     background: #4285F4 none;
     border: none;
@@ -37,7 +37,24 @@
     border: none
 }
 
+/* Size */
 .button--large {
-    max-width: 28.5rem;
+    padding: 2rem 4rem;
+}
 
+.button__icon {
+    display: flex;
+    flex-shrink: 0;
+    place-items: center center;
+    font-size: 1.5rem;
+    transition: color 200ms ease;
+}
+
+.button--has--icon {
+    padding-left: 0.75rem;
+}
+
+.button--no--content {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
 }
