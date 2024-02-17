@@ -1,24 +1,28 @@
 import React from 'react'
 import clsx from 'clsx'
 
-type RoutePart = string | Record<string, any>
+import './link.css'
 
 export interface LinkProps extends React.HTMLAttributes<HTMLAnchorElement> {
-    to?: string | [string, RoutePart?]
+    to?: string
     children?: React.ReactNode
     target?: string
     onClick?: React.MouseEventHandler<HTMLAnchorElement>
+    disabled?: boolean
 }
 
 export const Link: React.FC<
     LinkProps & React.HTMLAttributes<HTMLAnchorElement>
-> = ({ to, target, children, ...LinkProps }) => {
+> = ({ to, target, children, onClick, className, disabled, ...LinkProps }) => {
     return (
         <a
             href={typeof to === 'string' ? to : '#'}
-            className={clsx()}
-            target={target}
+            className={clsx('link', disabled && 'link--disabled', className)}
+            target={target ? target : undefined}
+            onClick={onClick}
             {...LinkProps}
-        ></a>
+        >
+            {children}
+        </a>
     )
 }

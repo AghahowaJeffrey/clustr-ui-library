@@ -42,11 +42,12 @@ export const Button: React.FC<
     return (
         <ButtonComponent
             className={clsx(
-                'button--default',
+                'button',
                 size && `button--${size}`,
                 variant && `button--${variant}`,
                 !!icon && `button--has--icon`,
-                !children && 'button--no-content'
+                !children && 'button--no-content',
+                className
             )}
             onClick={!disabled ? onClick : undefined}
             disabled={disabled}

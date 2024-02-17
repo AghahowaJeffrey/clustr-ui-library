@@ -1,6 +1,19 @@
+/* BEM Methodology */
+/* -- modifier */
+/* __ element */
 
+.link {
+    padding: 0;
+    line-height: inherit;
+    color: #4285F4;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    transition: none;
+    text-decoration: none;
+}
 
-
-
-
-
+.link:not(:disabled):hover {
+    color: #0292D4;
+}

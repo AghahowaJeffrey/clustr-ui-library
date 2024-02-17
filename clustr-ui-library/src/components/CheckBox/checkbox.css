@@ -1,6 +1,80 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.checkbox__input {
+    width: 0 !important;
+    height: 0 !important;
+    appearance: none !important;
+}
+
+label {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    min-height: 1.5rem;
+    cursor: pointer;
+}
+
+.checkbox:{
+    color: #4285F4;
+    cursor: not-allowed;
+}
 
 
+/*.LemonCheckbox:not(.LemonCheckbox--disabled):hover,*/
+/*.LemonCheckbox:not(.LemonCheckbox--disabled):active {*/
+/*    label {*/
+/*        --box-color: var(--primary-3000-hover);*/
 
+/*        .checkbox__box {*/
+/*            border-color: var(--box-color);*/
+/*        }*/
+/*    }*/
+/*}*/
 
+/*.checkbox:not(.checkbox--disabled):active label {*/
+/*    --box-color: var(--primary-3000-active);*/
+/*}*/
 
+/*.checkbox--checked {*/
+/*    label {*/
+/*        .checkbox__box {*/
+/*            background: var(--box-color);*/
+/*            border-color: transparent;*/
 
+/*            path {*/
+/*                stroke-dashoffset: 0;*/
+/*            }*/
+/*        }*/
+/*    }*/
+/*}*/
+
+/*.checkbox--bordered {*/
+/*    line-height: 1.4;*/
+
+/*    label {*/
+/*        min-height: 2.5rem;*/
+/*        padding: 0 0.75rem;*/
+/*        background: var(--bg-light);*/
+/*        border: 1px solid var(--border);*/
+/*        border-radius: var(--radius);*/
+/*    }*/
+
+/*    &.LemonCheckbox--small {*/
+/*        label {*/
+/*            min-height: 2rem;*/
+/*            padding: 0 0.5rem;*/
+/*        }*/
+/*    }*/
+
+/*    .Field--error & {*/
+/*        label {*/
+/*            border: 1px solid var(--danger);*/
+/*        }*/
+/*    }*/
+/*}*/

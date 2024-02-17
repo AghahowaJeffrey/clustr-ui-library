@@ -22,7 +22,6 @@ export const Default: Story = {
         targetBlank: true,
         type: 'button',
         size: 'small',
-        // to: 'www.facebook.com',
     },
 }
 
